@@ -62,7 +62,7 @@ function setup() {
 
   clothesLine = []; //clothes array
 
-  let startX = let startX = game.basketForLaterButton.x;
+  let startX = width / 2 - 200;  // start of the clothesline
   let y = height/ 2;
   let maxSlots = 10; // 10 clothes only on the line
   let spacing = 60;
@@ -115,6 +115,17 @@ function draw() {
 
   } else if (gameState === 'game') {
     game.display();
+
+    if (game && game.basketForLaterButton.x){
+    let startX = game.basketForLaterButton.x - 200;
+
+      let startX = game.basketForLaterButton.x - 200; //fixing clothesline just above the for later basket
+      let spacing = 80
+      
+    for (let i = 0; i < clothesLine.length; i++) {
+     clothesLine[i].x = startX + i * spacing;
+  }
+}
 
     // lose condition -- if the player goes beyond 60seconds, the player will lose the game.
     if (game.timer >= 60) {
