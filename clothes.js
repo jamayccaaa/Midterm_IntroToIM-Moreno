@@ -9,13 +9,13 @@ class Cloth {
   this.offsetX = 0;
   this.offsetY = 0;
 
-  if (index === 0) this.weight = 200;
+  if (index === 0) this.weight = 200; // weight for each type of clothes
   else if (index === 1) this.weight = 300;
   else if (index === 2) this.weight = 400;
   else if (index === 3) this.weight = 100;
   }
 
-  update() {
+  update() { // dragging the clothes
   if (this.dragging) {
     this.x = mouseX + this.offsetX;
     this.y = mouseY + this.offsetY;
@@ -30,7 +30,7 @@ class Cloth {
   pressed(mx, my) {
   let half = this.size / 2;
 
-  if (
+  if ( // checks if the mouse is clicking for a clothing item
     mx > this.x - half &&
     mx < this.x + half &&
     my > this.y - half &&
