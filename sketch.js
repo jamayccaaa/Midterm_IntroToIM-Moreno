@@ -65,7 +65,7 @@ function setup() {
   let startX = width / 2 - 200;  // start of the clothesline
   let y = height/ 2;
   let maxSlots = 10; // 10 clothes only on the line
-  let spacing = 60;
+  let spacing = 80;
 
   for (let i = 0; i < 10; i++) { // 10 slots in the clothes line
   clothesLine.push(createVector(startX + i * 80, y));
@@ -116,12 +116,9 @@ function draw() {
   } else if (gameState === 'game') {
     game.display();
 
-    if (game && game.basketForLaterButton.x){
-    let startX = game.basketForLaterButton.x - 200;
-
+    if (game && game.basketForLaterButton){
       let startX = game.basketForLaterButton.x - 200; //fixing clothesline just above the for later basket
       let spacing = 80
-      
     for (let i = 0; i < clothesLine.length; i++) {
      clothesLine[i].x = startX + i * spacing;
   }
@@ -280,7 +277,7 @@ function mousePressed() {
 // ===== MOUSE RELEASE AFTER DRAGGING ===== //
 
 function mouseReleased() {
-  let spacing = 60;   // gaps in between the clothes
+  let spacing = 80;   // gaps in between the clothes
   let maxSlots = 10; // maximum slots for the clothesline
 
   for (let c of game.clothes) { //loop that does the command in every clothes
