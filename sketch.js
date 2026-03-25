@@ -62,7 +62,7 @@ function setup() {
 
   clothesLine = []; //clothes array
 
-  let startX = width + 90; // starting location of the clothesline
+  let startX = let startX = game.basketForLaterButton.x;
   let y = height/ 2;
   let maxSlots = 10; // 10 clothes only on the line
   let spacing = 60;
